@@ -9,6 +9,7 @@ import getArtist from './artistHelpers'
 function MainPage() {
   const [lang, setLang] = useState('eng')
   const [countdown, setCoundown] = useState('')
+  const [coffeeBad, setCoffeeBad] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,7 +41,7 @@ function MainPage() {
   return (
     <div className='App'>
       <div className='subText'>
-        <p className='fontFix'> :)</p>
+        <p className='fontFix'> {coffeeBad ? '>:))))' : ':)'}</p>
         <div className='langSwitch'>
           <div className={`langSwitcher link ${lang === 'eng' ? 'active' : ''}`} onClick={() => setLang('eng')}>
             🇺🇸
@@ -48,9 +49,40 @@ function MainPage() {
           <div className={`langSwitcher link ${lang === 'pl' ? 'active' : ''}`} onClick={() => setLang('pl')}>
             🇵🇱
           </div>
+          <div
+            className='langSwitcher link'
+            onClick={() => {
+              if (!coffeeBad) {
+                if (
+                  window.confirm(
+                    getLoco(
+                      'kliknięcie tego przycisku może być niebezpieczne dla epileptyków oraz przeciwników kawy. Czy na pewno chcesz kontynuować?'
+                    )
+                  )
+                ) {
+                  document.documentElement.style.filter =
+                    'blur(10px) hue-rotate(66deg) blur(6px) contrast(166%) blur(4px) invert(26%) blur(2px) saturate(666) blur(20px) invert(100%)'
+                  document.documentElement.style.setProperty('--main_', '#fff2ccff')
+                  document.documentElement.style.setProperty('--white_', '#4a2fa0ff')
+                  setCoffeeBad(true)
+                }
+              } else {
+                document.documentElement.style.setProperty('--main_', '#4a2fa0ff')
+                document.documentElement.style.setProperty('--white_', '#fff2ccff')
+                document.documentElement.style.filter = 'invert(0%)'
+                setCoffeeBad(false)
+              }
+            }}>
+            😈
+          </div>
         </div>
       </div>
-      <img id='coffee' src={coffeTime} alt='coffee time' />
+      <div className='tooltip tooltipEntrance'>
+        <img id='coffee' src={coffeTime} alt='coffee time' />
+        <span className='tooltiptext subSubText' style={{ bottom: '-15%' }}>
+          "caffe" time 😋
+        </span>
+      </div>
       <p className='subSubText'>
         {getLoco(
           'poniżej mozesz przeczytać o występujących artystach, klikając w ich pseudonimy artystyczne. bieżące informacje o koncercie znajdziesz na moich mediach społecznościowych'

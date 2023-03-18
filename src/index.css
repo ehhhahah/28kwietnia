@@ -1,26 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Trykker&display=swap');
 
+:root {
+  --main_: #4a2fa0ff;
+  --white_: #fff2ccff;
+  --accent_: #8d3535ff;
+  --black_: #151518ff;
+}
+
 body {
   margin: 10%;
   margin-top: 1%;
   margin-bottom: 5%;
   font-family: Trykker;
   line-height: 30px;
-  color: #fff2ccff;
-  background: #4a2fa0ff;
+  color: var(--white_);
+  background: var(--main_);
   background-size: 1000% 1000%;
 	-webkit-animation: gradientBG 40s ease infinite;
 	        animation: gradientBG 40s ease infinite;
 }
 
 ::-moz-selection {
-  color: #4a2fa0ff;
-  background: #fff2ccff;
+  color: var(--main_);
+  background: var(--white_);
 }
 
 ::selection {
-  color: #4a2fa0ff;
-  background: #fff2ccff;
+  color: var(--main_);
+  background: var(--white_);
 }
 
 .App {
@@ -42,8 +49,8 @@ hr {
 h1 {
   /* font-size: 50px; */
   font-family: Rock Salt;
-  background: #fff2ccff;
-  color: #4a2fa0ff;
+  background: var(--white_);
+  color: var(--main_);
   padding: 10px;
   text-align: center;
   border-radius: 20px;
@@ -54,7 +61,7 @@ h1 {
     font-size: 15px;
     /* width: 7%; */
     background: #fff2cc00;
-    color: #fff2ccff;
+    color: var(--white_);
   }
 }
 
@@ -111,16 +118,14 @@ h1 {
 /* links */
 
 a, .link {
-  color: #fff2ccff;
+  color: var(--white_);
   text-decoration-style: wavy;
   text-decoration-thickness: 6%;
-  /* background: #00000020; */
   cursor: pointer;
 }
 
 a:hover {
   text-decoration-thickness: 8%;
-  /* background: #00000080; */
   font-style: italic;
 }
 
@@ -132,51 +137,50 @@ a:hover {
   margin-top: 2%;
   margin-bottom: 2%;
   animation-duration: 20s;
-  /* animation-name: animateCoffee; */
   animation-iteration-count: infinite;
   box-shadow: 10px 10px 30px 8px #00000088;
-  border: 3px dotted #fff2ccff;  
+  border: 3px dotted var(--white_);  
 }
 
 @-webkit-keyframes gradientBG {
     0% {
-        background: #4a2fa0ff;
+        background: var(--main_);
     }
     70% {
-        background: #4a2fa0ff;
+        background: var(--main_);
     }
     78% {
-        background: #8d3535ff;
+        background: var(--accent_);
     }
     /* 86% {
         background: #30663bff;
     } */
     96% {
-        background: #151518ff;
+        background: var(--black_);
     }
     100% {
-      background: #4a2fa0ff;
+      background: var(--main_);
   }
 }
 
 @keyframes gradientBG {
   0% {
-    background: #4a2fa0ff;
+    background: var(--main_);
   }
   70% {
-      background: #4a2fa0ff;
+      background: var(--main_);
   }
   78% {
-      background: #8d3535ff;
+      background: var(--accent_);
   }
   /* 86% {
       background: #30663bff;
   } */
   96% {
-      background: #151518ff;
+      background: var(--black_);
   }
   100% {
-    background: #4a2fa0ff;
+    background: var(--main_);
   }
 }
 
@@ -204,7 +208,7 @@ a:hover {
 .langSwitcher {
   background: #00000020;
   border: none;
-  color: #fff2ccff;
+  color: var(--white_);
   padding: 5px;
   text-align: center;
   text-decoration: none;
@@ -253,8 +257,8 @@ a:hover {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #fff2ccff;
-  color: #4a2fa0ff;
+  background-color: var(--white_);
+  color: var(--main_);
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
@@ -277,7 +281,7 @@ a:hover {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #fff2ccff transparent;
+  border-color: transparent transparent var(--white_) transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -323,8 +327,6 @@ tr:last-child td:last-child { border-bottom-right-radius: 20px; }
   height: 500px;
   border-radius: 20px;
   box-shadow: 10px 10px 30px 4px #00000088;
-  /* // gradient background */
-  /* background: linear-gradient(45deg, #4a2fa0ff, #8d3535ff, #30663bff, #151518ff, #4a2fa0ff); */
   background: url(./assets/coffe-time-minify.svg);
   background-repeat: repeat;
   background-size: 10%;
@@ -337,12 +339,10 @@ tr:last-child td:last-child { border-bottom-right-radius: 20px; }
 }
 
 .sliderText {
-  color: #fff2ccff;
+  color: var(--white_);
   font-size: 30px;
   padding: 12px;
-  /* font-family: Rock Salt; */
-  /* text-shadow: 2px 2px 4px #000000; */
-  background: #4a2fa0ff;
+  background: var(--main_);
   position: absolute;
   margin: 10%;
   bottom: 0;
@@ -353,8 +353,7 @@ tr:last-child td:last-child { border-bottom-right-radius: 20px; }
   color: #fff2ccaa;
   font-size: 10px;
   font-family: Trykker;
-  /* text-shadow: 1px 1px 2px #000000; */
-  background: #4a2fa0ff;
+  background: var(--main_);
   line-height: 1.1;
   position: absolute;
   margin-left: 10%;
