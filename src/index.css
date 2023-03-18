@@ -63,6 +63,7 @@ h1 {
   text-align: justify;
   text-justify: inter-word;
   break-word: break-all;
+  margin-bottom: 5%;
 }
 
 #artist {
@@ -112,14 +113,14 @@ h1 {
 a, .link {
   color: #fff2ccff;
   text-decoration-style: wavy;
-  text-decoration-thickness: 4%;
+  text-decoration-thickness: 6%;
   /* background: #00000020; */
   cursor: pointer;
 }
 
 a:hover {
   text-decoration-thickness: 8%;
-  background: #00000080;
+  /* background: #00000080; */
   font-style: italic;
 }
 
@@ -233,8 +234,9 @@ a:hover {
 
 #map {
   border: 1px solid #000000;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 10px 10px 30px 4px #00000088;
+  margin-top: 5%;
 }
 
 .tooltip {
@@ -283,29 +285,37 @@ a:hover {
   opacity: 1;
 }
 
-#timetable {
-  border-collapse: collapse;
-  width: 100%;
+table {
+  /* border-collapse: collapse; */
+  width: 75%;
 }
 
-#timetable td, #timetable th {
-  border: 1px solid #fff2cc55;
+td, th {
   padding: 8px;
+  border-radius: 20px;
 }
 
-#timetable tr:nth-child(even) {
-  background-color: #15151811
+tr:nth-child(even) {
+  background-color: #15151809
 }
 
-#timetable tr:hover {
-  background-color: #15151888; 
+tr:nth-child(odd) {
+  background-color: #15151805
 }
 
-#timetable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: white;
+tr:hover {
+  background-color: #15151844; 
 }
+
+thead {
+  background-color: #15151844;
+}
+
+tr:first-child td:first-child { border-top-left-radius: 20px; }
+tr:first-child td:last-child { border-top-right-radius: 20px; }
+
+tr:last-child td:first-child { border-bottom-left-radius: 20px; }
+tr:last-child td:last-child { border-bottom-right-radius: 20px; }
 
 .swiper {
   margin: 2%;

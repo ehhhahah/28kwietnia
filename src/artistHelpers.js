@@ -37,6 +37,12 @@ const getArtist = (alias, randomizeCase = false) => {
           {!randomizeCase ? 'lunA aURa' : randomizeCharCase(alias)}
         </a>
       )
+    case 'ehh hahah':
+      return (
+        <a id='artist' href='https://www.instagram.com/ehhhhahah/'>
+          {!randomizeCase ? 'eHh hAHah' : randomizeCharCase(alias)}
+        </a>
+      )
     default:
       return null
   }

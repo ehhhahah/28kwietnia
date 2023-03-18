@@ -1,5 +1,6 @@
 import coffeTime from './assets/coffe-time-minify.svg'
 import rk_logo from './assets/rk_logo.png'
+import krowa_logo from './assets/krowa.png'
 import locoPlEng from './assets/locoPlEng.json'
 import { useState, useEffect } from 'react'
 import SwiperApp from './SwiperHelpers'
@@ -84,16 +85,21 @@ function MainPage() {
             <span className='fontFix'> 20:00</span>
           </p>
           <p>
-            <a href='https://www.facebook.com/swietakrowa'>Święta Krowa, ul. Smoleńsk 22, Kraków</a>
+            <a href='https://www.facebook.com/swietakrowa'>Święta Krowa</a>, ul. Smoleńsk 22, Kraków
           </p>
+          <div style={{ background: '#00000000', marginTop: '10px' }}>
+            <a href='https://www.facebook.com/swietakrowa'>
+              <img height={125} src={krowa_logo} style={{ filter: 'invert(100%)' }} alt='Święta Krowa' />
+            </a>
+          </div>
         </div>
         <div className='flexColumn'>
           <iframe
             title='map'
             id='map'
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.3260673258143!2d19.92664426956398!3d50.05819581669871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b0b53183423%3A0x43858e8429f7ddd9!2sSmole%C5%84sk%2022%2C%2031-112%20Krak%C3%B3w!5e0!3m2!1sen!2spl!4v1679140641184!5m2!1sen!2spl'
-            width='300'
-            height='300'
+            width='500'
+            height='350'
             loading='lazy'
             referrerPolicy='no-referrer-when-downgrade'></iframe>
           <p className='subSubText opacityText'>
@@ -120,7 +126,7 @@ function MainPage() {
       <hr />
       <h1>{getLoco('Rozklad czasu')}</h1>
 
-      <div>
+      <div className='flexColumn'>
         <p className='subSubText'>{getLoco('plan czasowy wydarzenia i dodatkowe informacje beda dostepne pózniej')}</p>
         {/* <table id='timetable'>
           <thead>
@@ -187,8 +193,43 @@ function MainPage() {
         </p>
         <p className='subText'>{getLoco('pierwsza audycja radiowa zostanie wyemitowana niebawem')}</p>
         <p className='subSubText'>
-          {getLoco('po emisji audycja zostanie zarchiwizowana i opublikowana na tej stronie kilka dni później')}
+          {getLoco('po emisji audycja zostanie zarchiwizowana i opublikowana na tej stronie kilka dni później')}.{' '}
+          {getLoco('w miedzyczasie zapraszamy do stałej ramówki Radia Kapitał artystów wystepujacych na koncercie')}:
         </p>
+        <table id='timetable'>
+          <thead>
+            <tr>
+              <th>{getLoco('artysta')}</th>
+              <th>{getLoco('audycje')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>roll geep</th>
+              <th>
+                <a href='https://radiokapital.pl/shows/chrzeszczo-brzeszcze/'>"chrzeszczo-brzeszcze"</a>
+              </th>
+            </tr>
+            <tr>
+              <th>Marzena Wieczór</th>
+              <th>
+                <a href='https://radiokapital.pl/shows/virgo-moon-malware/'>"virgo moon malware"</a>,<br />
+                <a href='https://radiokapital.pl/shows/the-mirror-world-mirrors/'>"the mirror world mirrors"</a>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div className='tooltip tooltipEntrance'>
+                  <p>ehh hahah</p>
+                  <span className='tooltiptext subSubText'>{getLoco('organizator imprezy')}</span>
+                </div>
+              </th>
+              <th>
+                <a href='https://radiokapital.pl/shows/muzyka-ehha/'>"muzyka ehha"</a>
+              </th>
+            </tr>
+          </tbody>
+        </table>
 
         {/* <div className='rkEmbed'>
           <iframe
@@ -214,9 +255,9 @@ function MainPage() {
             src='https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fradiokapital%2Fradio-kapita%C5%82-do-3-razy-sztuka-11-luka-5g-2020-08-21%2F'
             frameborder='0'></iframe>
         </div> */}
-        <p>
+        {/* <p>
           <a href='http://radiokapital.pl/'>Radio Kapiał</a>
-        </p>
+        </p> */}
         <div style={{ background: '#00000000', marginTop: '10px' }}>
           <a href='https://radiokapital.pl/'>
             <img height={30} src={rk_logo} style={{ filter: 'invert(100%)' }} alt='Radio Kapitał' />
