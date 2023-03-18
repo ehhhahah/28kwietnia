@@ -110,7 +110,6 @@ function MainPage() {
       <hr />
       <h1>{getLoco('Organizacyjne')}</h1>
 
-      <p className='subSubText'>{getLoco('dziwna muzyka elektroniczna na żywo i trochę dziwne dj sety')}</p>
       <div className='tooltip tooltipEntrance'>
         <p className='subSubText'>
           {getLoco('wstęp') + '  '}
@@ -123,8 +122,6 @@ function MainPage() {
           'odezwij się do nas, jeśli chcesz przyjść na wydarzenie, ale nie stać cię na bramke. kontakt jest dostępny na dole strony'
         )}
       </p>
-      <hr />
-      <h1>{getLoco('Rozklad czasu')}</h1>
 
       <div className='flexColumn'>
         <p className='subSubText'>{getLoco('plan czasowy wydarzenia i dodatkowe informacje beda dostepne pózniej')}</p>
