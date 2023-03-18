@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Trykker&display=swap');
+
+/* // mains */
+
+body {
+  margin: 10%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  font-family: Trykker;
+  line-height: 30px;
+  color: #fff2ccff;
+  background: #4a2fa0ff;
+  background-size: 1000% 1000%;
+	-webkit-animation: gradientBG 10s step-start infinite;
+	        animation: gradientBG 10s step-start infinite;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  
+}
+
+@media screen and (min-width: 1000px) {
+  .App {
+    /* width: 50%; */
+  }
+}
+
+/* typography */
+
+.fontFix {
+  font-family: Rock Salt;
+}
+
+#mainText {
+  font-family: Rock Salt;
+  line-height: 80px;
+  font-size: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+  break-word: break-all;
+}
+
+#artist {
+  font-size: 35px;
+  break-word: break-all;
+}
+
+.subText {
+  font-size: 23px;
+  text-align: center;
+}
+
+.subSubText {
+  font-size: 13px;
+  text-align: center;
+}
+
+.nobr { white-space: nowrap; }
+
+/* links */
+
+a, .link {
+  color: #fff2ccff;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1%;
+  background: #00000020;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration-thickness: 5%;
+  background: #00000080;
+}
+
+/* imgs */
+
+#coffee {
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation-duration: 8s;
+  animation-name: animatecards;
+  box-shadow: 10px 10px 30px 8px #00000088;
+  border: 3px dotted #fff2ccff;  
+}
+
+/* animations */
+
+@-webkit-keyframes gradientBG {
+    10% {
+        background: #8d3535ff;
+    }
+    80% {
+        background: #4a2fa0ff;
+    }
+    90% {
+        background: #30663bff;
+    }
+    100% {
+        background: #151518ff;
+    }
+}
+
+@keyframes gradientBG {
+  10% {
+    background: #8d3535ff;
+  }
+  80% {
+    background: #4a2fa0ff;
+  }
+  90% {
+      background: #30663bff;
+  }
+  100% {
+      background: #151518ff;
+  }
+}
+
+@keyframes animatecards {
+  from {
+    opacity: 0%;
+    box-shadow: 50px 100px 8000px 100px #000;  
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+// buttons etc
+
+.langSwitch {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.langSwitcher {
+  background: #00000020;
+  border: none;
+  color: #fff2ccff;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.langSwitcher:hover {
+  background: #000000;
+}
+
+.active {
+  background: #00000080;
+}
