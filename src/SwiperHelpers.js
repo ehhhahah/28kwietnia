@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
-import evilmedved from './assets/artists/evilmedved1.jpeg'
-import mimi from './assets/artists/mimi1.jpeg'
-import plk from './assets/artists/plk2.jpeg'
-import szustak from './assets/artists/szustak2.jpeg'
-import luna from './assets/artists/luna1.png'
+import evilmedved from './assets/artists/evilmedved1.webp'
+import mimi from './assets/artists/mimi1.webp'
+import plk from './assets/artists/plk2.webp'
+import szustak from './assets/artists/szustak2.webp'
+import luna from './assets/artists/luna1.webp'
 import coffee from './assets/coffe-time-minify.svg'
 import getArtist from './artistHelpers'
 
