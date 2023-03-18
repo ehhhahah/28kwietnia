@@ -1,10 +1,26 @@
 import coffeTime from './assets/coffe-time-minify.svg'
 import rk_logo from './assets/rk_logo.png'
 import locoPlEng from './assets/locoPlEng.json'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import SwiperApp from './SwiperHelpers'
+import getArtist from './artistHelpers'
 
 function MainPage() {
   const [lang, setLang] = useState('eng')
+  const [countdown, setCoundown] = useState('')
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCoundown(countdownFun())
+      const swiper = document.querySelector('.swiper').swiper
+      if (Math.random() < 0.0) {
+        swiper.slideNext()
+      }
+    }, 1000)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
 
   const getLoco = (textPhrase) => {
     if (lang === 'eng') {
@@ -13,48 +29,11 @@ function MainPage() {
     return textPhrase
   }
 
-  const randomizeCharCase = (text) => {
-    return text
-      .split('')
-      .map((v) => (Math.round(Math.random()) ? v.toUpperCase() : v.toLowerCase()))
-      .join('')
-  }
-
-  const getArtist = (alias, randomizeCase = false) => {
-    switch (alias.toLowerCase()) {
-      case 'roll geep':
-        return (
-          <a id='artist' href='https://www.instagram.com/roll_geep/'>
-            {!randomizeCase ? 'roLL geEp' : randomizeCharCase(alias)}
-          </a>
-        )
-      case 'plk':
-        return (
-          <a id='artist' href='https://www.instagram.com/polak_/'>
-            {!randomizeCase ? 'PLk' : randomizeCharCase(alias)}
-          </a>
-        )
-      case 'marzena wieczór':
-        return (
-          <a id='artist' href='https://www.instagram.com/godblessthedeathdrive/'>
-            {!randomizeCase ? 'marZEna wIeCzór' : randomizeCharCase(alias)}
-          </a>
-        )
-      case 'evil medved':
-        return (
-          <a id='artist' href='https://www.instagram.com/evilm___/'>
-            {!randomizeCase ? 'evil MEDved' : randomizeCharCase(alias)}
-          </a>
-        )
-      case 'luna aura':
-        return (
-          <a id='artist' href='https://www.instagram.com/luna.nova777/'>
-            {!randomizeCase ? 'lunA aURa' : randomizeCharCase(alias)}
-          </a>
-        )
-      default:
-        return null
-    }
+  const countdownFun = () => {
+    const date = new Date('2023-04-28T20:00:00')
+    const now = new Date()
+    const seconds = parseInt(Math.abs(date.getTime() - now.getTime()) / 1000)
+    return <span className='fontFix'>{seconds}</span>
   }
 
   return (
@@ -86,13 +65,18 @@ function MainPage() {
         )
       </p>
       <hr className='bigger' />
+      <h1>{getLoco('Artysci')}</h1>
       <div id='mainText'>
         {getLoco('zagra ziom')} {getArtist('roll geep')} (live), {getLoco('kochana')} {getArtist('plk')} (dj),{' '}
         {getLoco('wyjatkowa')} {getArtist('marzena wieczór')} (dj) {getLoco('oraz')} {getArtist('evil medved')} (live){' '}
         {getLoco('prosto z czech i bedzie fajna')} <span className='nobr'>{getArtist('luna aura')} (dj)</span>
       </div>
+      {/* {getArtist('roll geep')} */}
+      {<SwiperApp />}
+      {/* <hr className='bigger' /> */}
       <hr className='bigger' />
-      <div id='placeInfo'>
+      <h1>{getLoco('Czas i miejsce')}</h1>
+      <div className='doubleFlex'>
         <div className='subText'>
           <p>
             <span className='fontFix'>28</span> {getLoco('kwietnia')} <span className='fontFix'>2023</span>,{' '}
@@ -103,7 +87,7 @@ function MainPage() {
             <a href='https://www.facebook.com/swietakrowa'>Święta Krowa, ul. Smoleńsk 22, Kraków</a>
           </p>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className='flexColumn'>
           <iframe
             title='map'
             id='map'
@@ -118,6 +102,8 @@ function MainPage() {
         </div>
       </div>
       <hr />
+      <h1>{getLoco('Organizacyjne')}</h1>
+
       <p className='subSubText'>{getLoco('dziwna muzyka elektroniczna na żywo i trochę dziwne dj sety')}</p>
       <div className='tooltip tooltipEntrance'>
         <p className='subSubText'>
@@ -126,7 +112,14 @@ function MainPage() {
         </p>
         <span className='tooltiptext subSubText'>{getLoco('mozliwość zapłaty jedynie gotówką lub blikiem')}</span>
       </div>
+      <p className='subSubText'>
+        {getLoco(
+          'odezwij się do nas, jeśli chcesz przyjść na wydarzenie, ale nie stać cię na bramke. kontakt jest dostępny na dole strony'
+        )}
+      </p>
       <hr />
+      <h1>{getLoco('Rozklad czasu')}</h1>
+
       <div>
         <p className='subSubText'>{getLoco('plan czasowy wydarzenia i dodatkowe informacje beda dostepne pózniej')}</p>
         {/* <table id='timetable'>
@@ -181,24 +174,75 @@ function MainPage() {
         </table> */}
       </div>
       <hr />
-      <p className='subSubText opacityText'>
+      <h1>
+        {getLoco('Audycje w Radio Kapital')}
+        {/* <a href='https://radiokapital.pl/'>Radio Kapital</a> */}
+      </h1>
+
+      <div className='flexColumn'>
+        <p className='subSubText'>
+          {getLoco(
+            'najlepszy sposob na poznanie artystów to posłuchanie audycji w Radio Kapitał przygotowanych specjalnie na to wydarzenie'
+          )}
+        </p>
+        <p className='subText'>{getLoco('pierwsza audycja radiowa zostanie wyemitowana niebawem')}</p>
+        <p className='subSubText'>
+          {getLoco('po emisji audycja zostanie zarchiwizowana i opublikowana na tej stronie kilka dni później')}
+        </p>
+
+        {/* <div className='rkEmbed'>
+          <iframe
+            title='RKMIX1'
+            width='100%'
+            height='60'
+            src='https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fradiokapital%2Fradio-kapita%C5%82-do-3-razy-sztuka-11-luka-5g-2020-08-21%2F'
+            frameborder='0'></iframe>
+        </div>
+        <div className='rkEmbed'>
+          <iframe
+            title='RKMIX1'
+            width='100%'
+            height='60'
+            src='https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fradiokapital%2Fradio-kapita%C5%82-do-3-razy-sztuka-11-luka-5g-2020-08-21%2F'
+            frameborder='0'></iframe>
+        </div>
+        <div className='rkEmbed'>
+          <iframe
+            title='RKMIX1'
+            width='100%'
+            height='60'
+            src='https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fradiokapital%2Fradio-kapita%C5%82-do-3-razy-sztuka-11-luka-5g-2020-08-21%2F'
+            frameborder='0'></iframe>
+        </div> */}
         <p>
-          {getLoco('zapraszam do kontaktu w razie jakichkolwiek pytan')}{' '}
-          <a href='https://linktr.ee/ehhhahah'>({getLoco('linki do kontaktu')})</a>
+          <a href='http://radiokapital.pl/'>Radio Kapiał</a>
         </p>
-        <p>
-          <a href='https://linktr.ee/ehhhahah'>ehh hahah</a>, 2023
-        </p>
-        <p style={{ fontSize: 8 }}>
-          {getLoco(`grafika 'czas kawy' autorstwa uzytkownika rotben dostepna jest tutaj: `)}
-          <a href='https://openclipart.org/detail/281530/coffee-time'>link (CC0 1.0)</a>
-        </p>
-        <div style={{ background: '#00000000' }}>
+        <div style={{ background: '#00000000', marginTop: '10px' }}>
           <a href='https://radiokapital.pl/'>
             <img height={30} src={rk_logo} style={{ filter: 'invert(100%)' }} alt='Radio Kapitał' />
           </a>
         </div>
-      </p>
+      </div>
+      <hr />
+      <h1>{getLoco('Kontakt')}</h1>
+
+      <div className='subSubText'>
+        <p>
+          {getLoco('zapraszam do kontaktu w razie jakichkolwiek pytan')}{' '}
+          <a href='https://linktr.ee/ehhhahah'>({getLoco('linki do kontaktu')})</a>
+        </p>
+        <p className='opacityText'>
+          <a href='https://linktr.ee/ehhhahah'>ehh hahah</a>, 2023
+        </p>
+        <p className='opacityText' style={{ fontSize: 8 }}>
+          {getLoco(`grafika 'czas kawy' autorstwa uzytkownika rotben dostepna jest tutaj: `)}
+          <a href='https://openclipart.org/detail/281530/coffee-time'>link (CC0 1.0)</a>
+        </p>
+
+        <p className='subSubText opacityText'>
+          {getLoco('jeszcze')} {countdown} {' ' + getLoco('sekund')}
+        </p>
+      </div>
     </div>
   )
 }

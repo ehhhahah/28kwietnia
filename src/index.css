@@ -9,8 +9,8 @@ body {
   color: #fff2ccff;
   background: #4a2fa0ff;
   background-size: 1000% 1000%;
-	-webkit-animation: gradientBG 10s ease infinite;
-	        animation: gradientBG 10s ease infinite;
+	-webkit-animation: gradientBG 40s ease infinite;
+	        animation: gradientBG 40s ease infinite;
 }
 
 ::-moz-selection {
@@ -34,8 +34,28 @@ body {
 }
 
 hr {
-  margin: 5%;
-  opacity: 20%;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  opacity: 10%;
+}
+
+h1 {
+  /* font-size: 50px; */
+  font-family: Rock Salt;
+  background: #fff2ccff;
+  color: #4a2fa0ff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 15px;
+    /* width: 7%; */
+    background: #fff2cc00;
+    color: #fff2ccff;
+  }
 }
 
 #mainText {
@@ -92,13 +112,13 @@ hr {
 a, .link {
   color: #fff2ccff;
   text-decoration-style: wavy;
-  text-decoration-thickness: 1%;
-  background: #00000020;
+  text-decoration-thickness: 4%;
+  /* background: #00000020; */
   cursor: pointer;
 }
 
 a:hover {
-  text-decoration-thickness: 5%;
+  text-decoration-thickness: 8%;
   background: #00000080;
   font-style: italic;
 }
@@ -108,9 +128,10 @@ a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   animation-duration: 20s;
-  animation-name: animateCoffee;
+  /* animation-name: animateCoffee; */
   animation-iteration-count: infinite;
   box-shadow: 10px 10px 30px 8px #00000088;
   border: 3px dotted #fff2ccff;  
@@ -126,9 +147,9 @@ a:hover {
     78% {
         background: #8d3535ff;
     }
-    86% {
+    /* 86% {
         background: #30663bff;
-    }
+    } */
     96% {
         background: #151518ff;
     }
@@ -147,9 +168,9 @@ a:hover {
   78% {
       background: #8d3535ff;
   }
-  86% {
+  /* 86% {
       background: #30663bff;
-  }
+  } */
   96% {
       background: #151518ff;
   }
@@ -201,7 +222,7 @@ a:hover {
   background: #00000080;
 }
 
-#placeInfo {
+.doubleFlex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -284,4 +305,49 @@ a:hover {
   padding-top: 12px;
   padding-bottom: 12px;
   color: white;
+}
+
+.swiper {
+  margin: 2%;
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px 4px #00000088;
+  /* // gradient background */
+  /* background: linear-gradient(45deg, #4a2fa0ff, #8d3535ff, #30663bff, #151518ff, #4a2fa0ff); */
+  background: url(./assets/coffe-time-minify.svg);
+  background-repeat: repeat;
+  background-size: 10%;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.sliderText {
+  color: #fff2ccff;
+  font-size: 30px;
+  padding: 12px;
+  /* font-family: Rock Salt; */
+  /* text-shadow: 2px 2px 4px #000000; */
+  background: #4a2fa0ff;
+  position: absolute;
+  margin: 10%;
+  bottom: 0;
+  width: min-content;
+}
+
+.sliderTextSmall {
+  color: #fff2ccaa;
+  font-size: 10px;
+  font-family: Trykker;
+  /* text-shadow: 1px 1px 2px #000000; */
+  background: #4a2fa0ff;
+  line-height: 1.1;
+  position: absolute;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  bottom: 0
 }
