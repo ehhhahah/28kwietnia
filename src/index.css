@@ -361,3 +361,7 @@ tr:last-child td:last-child { border-bottom-right-radius: 20px; }
   margin-bottom: 5%;
   bottom: 0
 }
+
+a > img:hover {
+  opacity: 80%;
+}

@@ -28,42 +28,48 @@ export default function App() {
       // centeredSlidesBounds={true}
       className='mySwiper'>
       <SwiperSlide>
-        <div>
-          <p className='sliderText'>{getArtist('evil medved', true)}</p>
-          <p className='sliderTextSmall'>
-            fot:{' '}
-            <a href='https://shapeplatform.eu/artist/evil-medved/' style={{ color: '#fff2ccaa' }}>
-              shapeplatform.eu/
-            </a>
-          </p>
-          <img height={500} id='' src={evilmedved} alt='evil medved' />
-        </div>
+        <a href='https://www.instagram.com/evilm___/'>
+          <div>
+            <p className='sliderText'>{getArtist('evil medved', true)}</p>
+            <p className='sliderTextSmall'>
+              fot:{' '}
+              <a href='https://shapeplatform.eu/artist/evil-medved/' style={{ color: '#fff2ccaa' }}>
+                shapeplatform.eu/
+              </a>
+            </p>
+            <img height={500} id='' src={evilmedved} alt='evil medved' />
+          </div>
+        </a>
       </SwiperSlide>
       <SwiperSlide>
-        <div>
-          <p className='sliderText'>{getArtist('marzena wieczór', true)}</p>
-          <p className='sliderTextSmall'>
-            fot:{' '}
-            <a
-              href='https://www.unsound.pl/en/archive/en/solidarity/artists/niemy-dotyk.html'
-              style={{ color: '#fff2ccaa' }}>
-              unsound.pl/
-            </a>
-          </p>
-          <img height={500} id='' src={mimi} alt='marzena wieczór' />
-        </div>
+        <a href='https://www.instagram.com/godblessthedeathdrive/'>
+          <div>
+            <p className='sliderText'>{getArtist('marzena wieczór', true)}</p>
+            <p className='sliderTextSmall'>
+              fot:{' '}
+              <a
+                href='https://www.unsound.pl/en/archive/en/solidarity/artists/niemy-dotyk.html'
+                style={{ color: '#fff2ccaa' }}>
+                unsound.pl/
+              </a>
+            </p>
+            <img height={500} id='' src={mimi} alt='marzena wieczór' />
+          </div>
+        </a>
       </SwiperSlide>
       <SwiperSlide>
-        <div>
-          <p className='sliderText'>{getArtist('plk', true)}</p>
-          <p className='sliderTextSmall'>
-            fot:{' '}
-            <a href='https://www.instagram.com/kmwtw420/' style={{ color: '#fff2ccaa' }}>
-              KMWTW
-            </a>
-          </p>
-          <img height={600} id='' src={plk} alt='PLK' />{' '}
-        </div>
+        <a href='https://www.instagram.com/polak_/'>
+          <div>
+            <p className='sliderText'>{getArtist('plk', true)}</p>
+            <p className='sliderTextSmall'>
+              fot:{' '}
+              <a href='https://www.instagram.com/kmwtw420/' style={{ color: '#fff2ccaa' }}>
+                KMWTW
+              </a>
+            </p>
+            <img height={600} id='' src={plk} alt='PLK' />{' '}
+          </div>
+        </a>
       </SwiperSlide>
 
       <SwiperSlide>
@@ -83,22 +89,26 @@ export default function App() {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div>
-          <p className='sliderText'>{getArtist('luna aura', true)}</p>
-          <img height={500} id='' src={luna} alt='luna aura' />
-        </div>
+        <a href='https://www.instagram.com/luna.nova777/'>
+          <div>
+            <p className='sliderText'>{getArtist('luna aura', true)}</p>
+            <img height={500} id='' src={luna} alt='luna aura' />
+          </div>
+        </a>
       </SwiperSlide>
       <SwiperSlide>
-        <div>
-          <p className='sliderText'>{getArtist('roll geep', true)}</p>
-          <p className='sliderTextSmall'>
-            fot:{' '}
-            <a href='https://www.instagram.com/kmwtw420/' style={{ color: '#fff2ccaa' }}>
-              KMWTW
-            </a>
-          </p>
-          <img height={500} id='' src={szustak} alt='roll geep' />
-        </div>
+        <a href='https://www.instagram.com/roll_geep/'>
+          <div>
+            <p className='sliderText'>{getArtist('roll geep', true)}</p>
+            <p className='sliderTextSmall'>
+              fot:{' '}
+              <a href='https://www.instagram.com/kmwtw420/' style={{ color: '#fff2ccaa' }}>
+                KMWTW
+              </a>
+            </p>
+            <img height={500} id='' src={szustak} alt='roll geep' />
+          </div>
+        </a>
       </SwiperSlide>
     </Swiper>
   )

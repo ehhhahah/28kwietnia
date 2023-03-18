@@ -98,7 +98,7 @@ function MainPage() {
             title='map'
             id='map'
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.3260673258143!2d19.92664426956398!3d50.05819581669871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b0b53183423%3A0x43858e8429f7ddd9!2sSmole%C5%84sk%2022%2C%2031-112%20Krak%C3%B3w!5e0!3m2!1sen!2spl!4v1679140641184!5m2!1sen!2spl'
-            width='500'
+            width='400'
             height='350'
             loading='lazy'
             referrerPolicy='no-referrer-when-downgrade'></iframe>
