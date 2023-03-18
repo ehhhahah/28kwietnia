@@ -37,7 +37,7 @@ export default function App() {
                 shapeplatform.eu/
               </a>
             </p>
-            <img height={500} id='' src={evilmedved} alt='evil medved' />
+            <img height={500} width={750} id='' src={evilmedved} alt='evil medved' />
           </div>
         </a>
       </SwiperSlide>
@@ -53,7 +53,7 @@ export default function App() {
                 unsound.pl/
               </a>
             </p>
-            <img height={500} id='' src={mimi} alt='marzena wieczór' />
+            <img height={500} width={750} id='' src={mimi} alt='marzena wieczór' />
           </div>
         </a>
       </SwiperSlide>
@@ -67,7 +67,7 @@ export default function App() {
                 KMWTW
               </a>
             </p>
-            <img height={600} id='' src={plk} alt='PLK' />{' '}
+            <img height={500} width={750} id='' src={plk} alt='PLK' />{' '}
           </div>
         </a>
       </SwiperSlide>
@@ -79,6 +79,7 @@ export default function App() {
           }}>
           <img
             height={500}
+            width={750}
             id=''
             src={coffee}
             style={coffeeBad ? { filter: 'invert(1)', rotate: '180deg' } : { filter: 'invert(0)' }}
@@ -92,7 +93,7 @@ export default function App() {
         <a href='https://www.instagram.com/luna.nova777/'>
           <div>
             <p className='sliderText'>{getArtist('luna aura', true)}</p>
-            <img height={500} id='' src={luna} alt='luna aura' />
+            <img height={500} width={750} id='' src={luna} alt='luna aura' />
           </div>
         </a>
       </SwiperSlide>
@@ -106,7 +107,7 @@ export default function App() {
                 KMWTW
               </a>
             </p>
-            <img height={500} id='' src={szustak} alt='roll geep' />
+            <img height={500} width={750} id='' src={szustak} alt='roll geep' />
           </div>
         </a>
       </SwiperSlide>

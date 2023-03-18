@@ -78,7 +78,7 @@ function MainPage() {
         </div>
       </div>
       <div className='tooltip tooltipEntrance'>
-        <img id='coffee' src={coffeTime} alt='coffee time' />
+        <img width={150} height={115} id='coffee' src={coffeTime} alt='coffee time' />
         <span className='tooltiptext subSubText' style={{ bottom: '-15%' }}>
           "caffe" time 😋
         </span>
@@ -121,7 +121,7 @@ function MainPage() {
           </p>
           <div style={{ background: '#00000000', marginTop: '10px' }}>
             <a href='https://www.facebook.com/swietakrowa'>
-              <img height={125} src={krowa_logo} style={{ filter: 'invert(100%)' }} alt='Święta Krowa' />
+              <img height={125} width={125} src={krowa_logo} style={{ filter: 'invert(100%)' }} alt='Święta Krowa' />
             </a>
           </div>
         </div>
@@ -291,7 +291,7 @@ function MainPage() {
         </p> */}
         <div style={{ background: '#00000000', marginTop: '10px' }}>
           <a href='https://radiokapital.pl/'>
-            <img height={30} src={rk_logo} style={{ filter: 'invert(100%)' }} alt='Radio Kapitał' />
+            <img height={30} width={50} src={rk_logo} style={{ filter: 'invert(100%)' }} alt='Radio Kapitał' />
           </a>
         </div>
       </div>
