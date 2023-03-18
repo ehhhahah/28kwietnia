@@ -200,7 +200,7 @@ a:hover {
   justify-content: flex-end;
   padding: 10px;
   z-index: 3;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -210,6 +210,8 @@ a:hover {
   border: none;
   color: var(--white_);
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

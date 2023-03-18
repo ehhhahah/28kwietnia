@@ -10,6 +10,17 @@ function MainPage() {
   const [lang, setLang] = useState('eng')
   const [countdown, setCoundown] = useState('')
   const [coffeeBad, setCoffeeBad] = useState(false)
+  const [isLight, setIsLigth] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+  const toggleTheme = (checkout = false) => {
+    document.documentElement.style.setProperty('--main_', isLight ? '#fff2ccff' : '#4a2fa0ff')
+    document.documentElement.style.setProperty('--white_', isLight ? '#4a2fa0ff' : '#fff2ccff')
+    document.documentElement.style.setProperty('--accent_', isLight ? '#fff299ff' : '#8d3535ff')
+    document.documentElement.style.setProperty('--black_', isLight ? '#fff2ccff' : '#151518ff')
+    if (!checkout) {
+      setIsLigth(!isLight)
+    }
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +37,10 @@ function MainPage() {
 
   const getLoco = (textPhrase) => {
     if (lang === 'eng') {
-      return locoPlEng[textPhrase]
+      return locoPlEng[textPhrase]['eng']
+    }
+    if (lang === 'xd') {
+      return locoPlEng[textPhrase]['xd']
     }
     return textPhrase
   }
@@ -48,6 +62,12 @@ function MainPage() {
           </div>
           <div className={`langSwitcher link ${lang === 'pl' ? 'active' : ''}`} onClick={() => setLang('pl')}>
             🇵🇱
+          </div>
+          <div className={`langSwitcher link ${lang === 'xd' ? 'active' : ''}`} onClick={() => setLang('xd')}>
+            ☕️
+          </div>
+          <div className={`langSwitcher link ${isLight ? '' : 'active'}`} onClick={() => toggleTheme()}>
+            {isLight ? '🌙' : '🌞'}
           </div>
           <div
             className='langSwitcher link'
@@ -121,7 +141,17 @@ function MainPage() {
           </p>
           <div style={{ background: '#00000000', marginTop: '10px' }}>
             <a href='https://www.facebook.com/swietakrowa'>
-              <img height={125} width={125} src={krowa_logo} style={{ filter: 'invert(100%)' }} alt='Święta Krowa' />
+              <img
+                height={125}
+                width={125}
+                src={krowa_logo}
+                style={{
+                  filter: isLight
+                    ? 'invert(100%) '
+                    : 'invert(24%) sepia(32%) saturate(3565%) hue-rotate(236deg) brightness(70%) contrast(103%)'
+                }}
+                alt='Święta Krowa'
+              />
             </a>
           </div>
         </div>
@@ -291,7 +321,17 @@ function MainPage() {
         </p> */}
         <div style={{ background: '#00000000', marginTop: '10px' }}>
           <a href='https://radiokapital.pl/'>
-            <img height={30} width={50} src={rk_logo} style={{ filter: 'invert(100%)' }} alt='Radio Kapitał' />
+            <img
+              height={30}
+              width={50}
+              src={rk_logo}
+              style={{
+                filter: isLight
+                  ? 'invert(100%)'
+                  : 'invert(24%) sepia(32%) saturate(3565%) hue-rotate(236deg) brightness(70%) contrast(103%)'
+              }}
+              alt='Radio Kapitał'
+            />
           </a>
         </div>
       </div>
@@ -307,7 +347,7 @@ function MainPage() {
           <a href='https://linktr.ee/ehhhahah'>ehh hahah</a>, 2023
         </p>
         <p className='opacityText' style={{ fontSize: 8 }}>
-          {getLoco(`grafika 'czas kawy' autorstwa uzytkownika rotben dostepna jest tutaj: `)}
+          {getLoco(`grafika 'czas kawy' autorstwa uzytkownika rotben dostepna jest tutaj`) + ': '}
           <a href='https://openclipart.org/detail/281530/coffee-time'>link (CC0 1.0)</a>
         </p>
 
