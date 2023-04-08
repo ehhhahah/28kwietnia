@@ -2,6 +2,8 @@ import coffeTime from './assets/coffe-time-minify.svg'
 import rk_logo from './assets/rk_logo.webp'
 import krowa_logo from './assets/krowa.webp'
 import locoPlEng from './assets/locoPlEng.json'
+import artists from './assets/artists/artists.json'
+
 import { useState, useEffect } from 'react'
 import SwiperApp from './SwiperHelpers'
 import getArtist from './artistHelpers'
@@ -11,12 +13,14 @@ function MainPage() {
   const [countdown, setCoundown] = useState('')
   const [coffeeBad, setCoffeeBad] = useState(false)
   const [isLight, setIsLigth] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  const [hideSwitcher, setHideSwitcher] = useState(false)
+  const [hideFbBanner, setHideFbBanner] = useState(false)
 
   const toggleTheme = (checkout = false) => {
     document.documentElement.style.setProperty('--main_', isLight ? '#fff2ccff' : '#4a2fa0ff')
     document.documentElement.style.setProperty('--white_', isLight ? '#4a2fa0ff' : '#fff2ccff')
-    document.documentElement.style.setProperty('--accent_', isLight ? '#fff299ff' : '#8d3535ff')
-    document.documentElement.style.setProperty('--black_', isLight ? '#fff2ccff' : '#151518ff')
+    document.documentElement.style.setProperty('--accent_', isLight ? '#c9daf8ff' : '#8d3535ff')
+    document.documentElement.style.setProperty('--black_', isLight ? '#dac0b0ff' : '#151518ff')
     if (!checkout) {
       setIsLigth(!isLight)
     }
@@ -25,10 +29,10 @@ function MainPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCoundown(countdownFun())
-      const swiper = document.querySelector('.swiper').swiper
-      if (Math.random() < 0.0) {
-        swiper.slideNext()
-      }
+      // const swiper = document.querySelector('.swiper').swiper
+      // if (Math.random() < 0.2) {
+      //   swiper.slideNext()
+      // }
     }, 1000)
     return () => {
       clearInterval(interval)
@@ -54,48 +58,84 @@ function MainPage() {
 
   return (
     <div className='App'>
-      <div className='subText'>
-        <p className='fontFix'> {coffeeBad ? '>:))))' : ':)'}</p>
-        <div className='langSwitch'>
-          <div className={`langSwitcher link ${lang === 'eng' ? 'active' : ''}`} onClick={() => setLang('eng')}>
-            🇺🇸
-          </div>
-          <div className={`langSwitcher link ${lang === 'pl' ? 'active' : ''}`} onClick={() => setLang('pl')}>
-            🇵🇱
-          </div>
-          <div className={`langSwitcher link ${lang === 'xd' ? 'active' : ''}`} onClick={() => setLang('xd')}>
-            ☕️
-          </div>
-          <div className={`langSwitcher link ${isLight ? '' : 'active'}`} onClick={() => toggleTheme()}>
-            {isLight ? '🌙' : '🌞'}
-          </div>
-          <div
-            className='langSwitcher link'
+      {!hideFbBanner ? (
+        <div id='fbBanner'>
+          <span>
+            <a href='https://www.facebook.com/events/155093810520816/'>
+              {' '}
+              {window.innerWidth < 800
+                ? 'https://fb.com/events/155093810520816/'
+                : 'https://www.facebook.com/events/155093810520816/ ↗'}
+            </a>
+          </span>
+          <button
+            className='hider link'
             onClick={() => {
-              if (!coffeeBad) {
-                if (
-                  window.confirm(
-                    getLoco(
-                      'kliknięcie tego przycisku może być niebezpieczne dla epileptyków oraz przeciwników kawy. Czy na pewno chcesz kontynuować?'
-                    )
-                  )
-                ) {
-                  document.documentElement.style.filter =
-                    'blur(10px) hue-rotate(66deg) blur(6px) contrast(166%) blur(4px) invert(26%) blur(2px) saturate(666) blur(20px) invert(100%)'
-                  document.documentElement.style.setProperty('--main_', '#fff2ccff')
-                  document.documentElement.style.setProperty('--white_', '#4a2fa0ff')
-                  setCoffeeBad(true)
-                }
-              } else {
-                document.documentElement.style.setProperty('--main_', '#4a2fa0ff')
-                document.documentElement.style.setProperty('--white_', '#fff2ccff')
-                document.documentElement.style.filter = 'invert(0%)'
-                setCoffeeBad(false)
-              }
+              setHideFbBanner(true)
             }}>
-            😈
-          </div>
+            X
+          </button>
         </div>
+      ) : null}
+      <div className={`langSwitch ${hideSwitcher ? '' : 'shownSwitcher'}`}>
+        {hideSwitcher ? (
+          <div className='langSwitcher link hider' onClick={() => setHideSwitcher(false)}>
+            {'⤴'}
+          </div>
+        ) : (
+          <div className='langSwitcher link hider' onClick={() => setHideSwitcher(true)}>
+            {'⤵'}
+          </div>
+        )}
+        {!hideSwitcher ? (
+          <span>
+            {/* <div className='langSwitcher text'>🌎</div> */}
+            <div className={`langSwitcher link ${lang === 'eng' ? 'active' : ''}`} onClick={() => setLang('eng')}>
+              🇺🇸
+            </div>
+            <div className={`langSwitcher link ${lang === 'pl' ? 'active' : ''}`} onClick={() => setLang('pl')}>
+              🇵🇱
+            </div>
+            {/* <div className={`langSwitcher link ${lang === 'xd' ? 'active' : ''}`} onClick={() => setLang('xd')}>
+              ☕️
+            </div> */}
+            {/* <div className='langSwitcher text'>👁️</div> */}
+            <div className={`langSwitcher link ${isLight ? '' : 'active'}`} onClick={() => toggleTheme()}>
+              {isLight ? '🌙' : '🌞'}
+            </div>
+            {/* <div
+              className='langSwitcher link'
+              onClick={() => {
+                if (!coffeeBad) {
+                  if (
+                    window.confirm(
+                      getLoco(
+                        'kliknięcie tego przycisku może być niebezpieczne dla epileptyków oraz przeciwników kawy. Czy na pewno chcesz kontynuować?'
+                      )
+                    )
+                  ) {
+                    document.documentElement.style.filter =
+                      'blur(10px) hue-rotate(66deg) blur(6px) contrast(166%) blur(4px) invert(26%) blur(2px) saturate(666) blur(20px) invert(100%)'
+                    document.documentElement.style.setProperty('--main_', '#fff2ccff')
+                    document.documentElement.style.setProperty('--white_', '#4a2fa0ff')
+                    setCoffeeBad(true)
+                  }
+                } else {
+                  document.documentElement.style.setProperty('--main_', '#4a2fa0ff')
+                  document.documentElement.style.setProperty('--white_', '#fff2ccff')
+                  document.documentElement.style.filter = 'invert(0%)'
+                  setCoffeeBad(false)
+                }
+              }}>
+              😈
+            </div> */}
+            <a href='https://www.facebook.com/events/155093810520816/'>
+              <div className='langSwitcher link' style={{ fontSize: '12px' }} onClick={() => {}}>
+                event on facebook
+              </div>
+            </a>
+          </span>
+        ) : null}
       </div>
       <div className='tooltip tooltipEntrance'>
         <img width={150} height={115} id='coffee' src={coffeTime} alt='coffee time' />
@@ -124,9 +164,16 @@ function MainPage() {
         {getLoco('wyjatkowa')} {getArtist('marzena wieczór')} (dj) {getLoco('oraz')} {getArtist('evil medved')} (live){' '}
         {getLoco('prosto z czech i bedzie fajna')} <span className='nobr'>{getArtist('luna aura')} (dj)</span>
       </div>
-      {/* {getArtist('roll geep')} */}
-      {<SwiperApp />}
-      {/* <hr className='bigger' /> */}
+      {/* <div id='mainText dynamic'>
+        {getLoco('zagra ziom')} {<Artist artistObj={artists['szustak']} optionsIn={{ isDropdown: true }} />} (live),{' '}
+        {getLoco('kochana')} {<Artist artistObj={artists['plk']} optionsIn={{ isDropdown: true }} />} (dj),{' '}
+        {getLoco('wyjatkowa')} {<Artist artistObj={artists['mi mi']} optionsIn={{ isDropdown: true }} />} (dj){' '}
+        {getLoco('oraz')} {<Artist artistObj={artists['evil medved']} optionsIn={{ isDropdown: true }} />} (live){' '}
+        {getLoco('prosto z czech i bedzie fajna')}{' '}
+        <span className='nobr'>{<Artist artistObj={artists['luna aura']} optionsIn={{ isDropdown: true }} />}(dj)</span>
+      </div> */}
+      {/* {<SwiperApp />} */}
+
       <hr className='bigger' />
       <h1>{getLoco('Czas i miejsce')}</h1>
       <div className='doubleFlex'>
@@ -179,7 +226,7 @@ function MainPage() {
           {getLoco('wstęp') + '  '}
           <span className='fontFix'>30</span> zł
         </p>
-        <span className='tooltiptext subSubText'>{getLoco('mozliwość zapłaty jedynie gotówką lub blikiem')}</span>
+        <span className='tooltiptext subSubText'>{getLoco('mozliwość zapłaty gotówką, kartą lub blikiem')}</span>
       </div>
       <p className='subSubText'>
         {getLoco(
@@ -206,7 +253,7 @@ function MainPage() {
               <th>21:00</th>
             </tr>
             <tr>
-              <th>{getArtist('roll geep', true)}</th>
+              <th>{getArtist('immortal wojtecnique', true)}</th>
               <th>live</th>
               <th>21:00</th>
               <th>22:00</th>

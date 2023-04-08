@@ -1,0 +1,37 @@
+{
+    "empty": {
+      "href": { "ig": "" },
+      "prettyCase": "",
+      "uglyCase": ""
+    },
+    "szustak": {
+      "href": { "ig": "https://www.instagram.com/roll_geep/" },
+      "prettyCase": "Immortal Wojtecnique",
+      "uglyCase": "immoRtal wojteCnIque"
+    },
+    "plk": {
+      "href": { "ig": "https://www.instagram.com/polak_/" },
+      "prettyCase": "PLK",
+      "uglyCase": "PLk"
+    },
+    "mi mi": {
+      "href": { "ig": "https://www.instagram.com/godblessthedeathdrive/" },
+      "prettyCase": "Marzena Wieczór",
+      "uglyCase": "marZEna wIeCzór"
+    },
+    "evil medved": {
+      "href": { "ig": "https://www.instagram.com/evilm___/" },
+      "prettyCase": "evil medved",
+      "uglyCase": "evil MEDved"
+    },
+    "luna aura": {
+      "href": { "ig": "https://www.instagram.com/luna.nova777/" },
+      "prettyCase": "luna aura",
+      "uglyCase": "lunA aURa"
+    },
+    "ehh hahah": {
+      "href": { "ig": "https://www.instagram.com/ehhhahah/" },
+      "prettyCase": "ehh hahah",
+      "uglyCase": "eHh hAHah"
+    }
+  }
