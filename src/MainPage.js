@@ -55,7 +55,7 @@ function MainPage() {
   }
 
   const countdownFun = () => {
-    const date = new Date('2023-04-28T20:00:00')
+    const date = new Date('2023-04-28T19:00:00')
     const now = new Date()
     const seconds = parseInt(Math.abs(date.getTime() - now.getTime()) / 1000)
     return <span className='fontFix'>{seconds}</span>
@@ -191,7 +191,7 @@ function MainPage() {
           <p>
             <span className='fontFix'>28</span> {getLoco('kwietnia')} <span className='fontFix'>2023</span>,{' '}
             {getLoco('piątek')}
-            <span className='fontFix'> 20:00</span>
+            <span className='fontFix'> 19:00</span>
           </p>
           <p>
             <a href='https://www.facebook.com/swietakrowa'>Święta Krowa</a>, ul. Smoleńsk 22, Kraków
@@ -243,6 +243,8 @@ function MainPage() {
           'odezwij się do nas, jeśli chcesz przyjść na wydarzenie, ale nie stać cię na bramke. kontakt jest dostępny na dole strony'
         )}
       </p>
+
+      <p className='subSubText'>{getLoco('zachęcamy również w miarę możliwości do płacenia więcej (np. 50 zł)')}</p>
 
       <div className='flexColumn'>
         <p className='subSubText'>{getLoco('plan czasowy wydarzenia i dodatkowe informacje beda dostepne pózniej')}</p>
@@ -309,7 +311,10 @@ function MainPage() {
             'najlepszy sposob na poznanie artystów to posłuchanie audycji w Radio Kapitał przygotowanych specjalnie na to wydarzenie'
           )}
         </p>
-        <p className='subText'>{getLoco('pierwsza audycja radiowa zostanie wyemitowana niebawem')}</p>
+        <p className='subText'>
+          {getLoco('pierwsza audycja radiowa zostanie wyemitowana 13 kwietnia 2023 o 13:00')} -{' '}
+          <a href='https://radiokapital.pl/'>radiokapital.pl</a>
+        </p>
         <p className='subSubText'>
           {getLoco('po emisji audycja zostanie zarchiwizowana i opublikowana na tej stronie kilka dni później')}.{' '}
           {getLoco('w miedzyczasie zapraszamy do stałej ramówki Radia Kapitał artystów wystepujacych na koncercie')}:
