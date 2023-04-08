@@ -105,6 +105,26 @@ const getArtist = (alias, randomizeCase = false) => {
           {!randomizeCase ? 'eHh hAHah' : randomizeCharCase(alias)}
         </a>
       )
+    case 'vvojtek':
+      return (
+        <a id='artist' href='https://www.instagram.com/ehhhhahah/'>
+          {!randomizeCase ? 'vvojTeK' : randomizeCharCase(alias)}
+        </a>
+      )
+    case 'house_of_weirdnessness':
+      // if screen is less than 600px return h_o_w instead of full name
+      if (window.innerWidth < 600) {
+        return (
+          <a id='artist-bobek' href='https://www.instagram.com/___h__o__w___/'>
+            {!randomizeCase ? 'H_o_W' : randomizeCharCase('h_o_w')}
+          </a>
+        )
+      }
+      return (
+        <a id='artist-bobek' href='https://www.instagram.com/___h__o__w___/'>
+          {!randomizeCase ? 'HOusE_oF_WeiRDnESsNesS' : randomizeCharCase(alias)}
+        </a>
+      )
     default:
       return null
   }

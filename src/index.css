@@ -79,6 +79,11 @@ h1 {
   font-family: Rock Salt;
 }
 
+#artist-bobek {
+  font-size: 17px;
+  font-family: Rock Salt;
+}
+
 @media only screen and (max-width: 600px) {
   #mainText {
     line-height: 40px;
@@ -93,6 +98,9 @@ h1 {
   }
   #artist {
     font-size: 35px;
+  }
+  #artist-bobek {
+    font-size: 17px;
   }
 }
 
@@ -278,7 +286,7 @@ a:hover {
 
 .tooltip > p {
   border-bottom: 3px dotted var(--white_);
-  opacity: 80%;
+  /* opacity: 80%; */
 }
 
 .tooltip .tooltiptext {
@@ -313,7 +321,7 @@ a:hover {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  opacity: 1;
+  opacity: 0.9;
 }
 
 table {

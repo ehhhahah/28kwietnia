@@ -41,7 +41,12 @@ function MainPage() {
 
   const getLoco = (textPhrase) => {
     if (lang === 'eng') {
-      return locoPlEng[textPhrase]['eng']
+      try {
+        return locoPlEng[textPhrase]['eng']
+      } catch (e) {
+        console.log("Can't find translation for: " + textPhrase)
+        return textPhrase
+      }
     }
     if (lang === 'xd') {
       return locoPlEng[textPhrase]['xd']
@@ -155,15 +160,20 @@ function MainPage() {
         <a className='fontFix' href='https://www.instagram.com/ehhhhahah/'>
           instagram
         </a>
-        )
+        ). {getLoco('proszę, przyjdźcie')}{' '}
       </p>
       <hr className='bigger' />
       <h1>{getLoco('Artysci')}</h1>
       <div id='mainText'>
-        {getLoco('zagra ziom')} {getArtist('roll geep')} (live), {getLoco('kochana')} {getArtist('plk')} (dj),{' '}
-        {getLoco('wyjatkowa')} {getArtist('marzena wieczór')} (dj) {getLoco('oraz')} {getArtist('evil medved')} (live){' '}
-        {getLoco('prosto z czech i bedzie fajna')} <span className='nobr'>{getArtist('luna aura')} (dj)</span>
+        {getLoco('zagra coolest')} {getArtist('luna aura')} (dj), {getLoco('wyjatkowa')} {getArtist('marzena wieczór')}{' '}
+        (dj), {getLoco('czeski mega talent')} {getArtist('evil medved')} (live), {getLoco('kochana')} {getArtist('plk')}{' '}
+        (dj), {getLoco('ja')} {}
+        {/* <span className='nobr'> */}
+        {getArtist('vvojtek')} (dj), {getLoco('gigaziom')} {getArtist('roll geep')} (live),{' '}
+        {getLoco('a scenografie zrobi boskie')} {getArtist('HOusE_oF_WeiRDnESsNesS')}
+        {/* </span> */}
       </div>
+      {/*czeski mega talent eVil MEDved (live), kochana PLk (dj), ja vvojTeK (dj), gigaziom (live) immoRtal wojteCnIque, a scenografie zrobi boskie HOusE_oF_WeiRDnESsNesS */}
       {/* <div id='mainText dynamic'>
         {getLoco('zagra ziom')} {<Artist artistObj={artists['szustak']} optionsIn={{ isDropdown: true }} />} (live),{' '}
         {getLoco('kochana')} {<Artist artistObj={artists['plk']} optionsIn={{ isDropdown: true }} />} (dj),{' '}
