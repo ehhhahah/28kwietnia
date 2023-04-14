@@ -12,7 +12,7 @@ function MainPage() {
   const [lang, setLang] = useState('pl')
   const [countdown, setCoundown] = useState('')
   const [coffeeBad, setCoffeeBad] = useState(false)
-  const [isLight, setIsLigth] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  const [isLight, setIsLigth] = useState(false) // useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
   const [hideSwitcher, setHideSwitcher] = useState(false)
   const [hideFbBanner, setHideFbBanner] = useState(false)
 
