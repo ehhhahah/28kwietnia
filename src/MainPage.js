@@ -9,7 +9,7 @@ import SwiperApp from './SwiperHelpers'
 import getArtist from './artistHelpers'
 
 function MainPage() {
-  const [lang, setLang] = useState('eng')
+  const [lang, setLang] = useState('pl')
   const [countdown, setCoundown] = useState('')
   const [coffeeBad, setCoffeeBad] = useState(false)
   const [isLight, setIsLigth] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -311,8 +311,32 @@ function MainPage() {
             'najlepszy sposob na poznanie artystów to posłuchanie audycji w Radio Kapitał przygotowanych specjalnie na to wydarzenie'
           )}
         </p>
+        <div id='radiokapitalembed'>
+          <iframe
+            title='audycja1'
+            width='100%'
+            height='166'
+            scrolling='no'
+            frameborder='no'
+            allow='autoplay'
+            src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1491730600&color=%234a2fa0&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'></iframe>
+          {/* <div style='font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;'> */}
+          {/* <div>
+            <a href='https://soundcloud.com/ehhahah' title='ehh hahah' rel='noreferrer' target='_blank'>
+              ehh hahah
+            </a>{' '}
+            ·{' '}
+            <a
+              href='https://soundcloud.com/ehhahah/event-sampler-e-m-i-w-l-a-m-w-p-1-28042023-swieta-krowa-krakow'
+              title='Event sampler: e. m. * I. W. * l. a. * M. W. * P. #1 (28.04.2023 @ Święta Krowa, Kraków)'
+              target='_blank'
+              rel='noreferrer'>
+              Event sampler: e. m. * I. W. * l. a. * M. W. * P. #1 (28.04.2023 @ Święta Krowa, Kraków)
+            </a>
+          </div> */}
+        </div>
         <p className='subText'>
-          {getLoco('pierwsza audycja radiowa zostanie wyemitowana 13 kwietnia 2023 o 13:00')} -{' '}
+          {getLoco('druga audycja radiowa zostanie wyemitowana 24 kwietnia 2023 o 15:00')} -{' '}
           <a href='https://radiokapital.pl/'>radiokapital.pl</a>
         </p>
         <p className='subSubText'>
